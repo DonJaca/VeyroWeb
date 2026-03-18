@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Syne } from "next/font/google";
+import { Providers } from "@/components/Providers";
 import "@/styles/globals.css";
 
 const inter = Inter({
@@ -35,7 +36,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${syne.variable} bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 transition-colors duration-300 min-h-screen flex flex-col`}
       >
-        {children}
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

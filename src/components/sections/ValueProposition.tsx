@@ -1,26 +1,16 @@
-const PROPS = [
-  {
-    icon: "bolt",
-    title: "Bold Vision",
-    description: "Pushing the absolute boundaries of modern UI beyond the standard grid systems.",
-  },
-  {
-    icon: "account_circle",
-    title: "User Centric",
-    description: "Merging brutalist aesthetics with seamless usability that converts and engages users.",
-  },
-  {
-    icon: "palette",
-    title: "High Contrast",
-    description: "Striking monochrome palettes with signature orange accents for memorable identity.",
-  },
-] as const;
+"use client";
+
+import { useLanguage } from "@/contexts/LanguageContext";
+import { t } from "@/lib/translations";
 
 export function ValueProposition() {
+  const { lang } = useLanguage();
+  const items = t[lang].valueProps;
+
   return (
     <section className="hidden md:block py-20 border-t border-slate-200 dark:border-slate-800 px-6 lg:px-20">
       <div className="max-w-7xl mx-auto grid grid-cols-3 gap-12">
-        {PROPS.map(({ icon, title, description }) => (
+        {items.map(({ icon, title, description }) => (
           <div
             key={title}
             className="flex flex-col gap-6 p-8 border border-slate-200 dark:border-slate-800 hover:border-primary transition-colors"

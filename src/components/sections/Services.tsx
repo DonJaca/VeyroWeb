@@ -1,11 +1,12 @@
-const SERVICES = [
-  { num: "01", title: "Brand Identity",  desc: "Logos, Guidelines, Art Direction" },
-  { num: "02", title: "UI/UX Design",    desc: "Interfaces, Prototypes, Mobile Apps" },
-  { num: "03", title: "Motion Design",   desc: "Animations, Lottie, Micro-Interactions" },
-  { num: "04", title: "Web Development", desc: "Frontend, Performance, Deployment" },
-] as const;
+"use client";
+
+import { useLanguage } from "@/contexts/LanguageContext";
+import { t } from "@/lib/translations";
 
 export function Services() {
+  const { lang } = useLanguage();
+  const tr = t[lang].services;
+
   return (
     <section>
 
@@ -13,10 +14,10 @@ export function Services() {
       <div className="hidden md:block py-16 lg:py-20 px-6 md:px-10 lg:px-20">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl lg:text-6xl font-black uppercase mb-12 lg:mb-16 tracking-tighter">
-            Services
+            {tr.heading}
           </h2>
           <div className="flex flex-col">
-            {SERVICES.map(({ num, title, desc }) => (
+            {tr.items.map(({ num, title, desc }) => (
               <div
                 key={num}
                 className="group py-8 lg:py-12 border-b border-slate-200 dark:border-slate-800 flex flex-col md:flex-row md:items-center justify-between hover:bg-primary transition-all px-4 gap-2 md:gap-0"
@@ -40,11 +41,13 @@ export function Services() {
       <div className="md:hidden bg-black text-white px-6 py-14 border-t border-slate-800">
         <div className="space-y-8">
           <div className="space-y-2">
-            <span className="text-primary font-bold tracking-[0.2em] text-xs uppercase">Expertise</span>
-            <h2 className="text-3xl font-black text-white">Specialized Services</h2>
+            <span className="text-primary font-bold tracking-[0.2em] text-xs uppercase">
+              {tr.mobileLabel}
+            </span>
+            <h2 className="text-3xl font-black text-white">{tr.mobileHeading}</h2>
           </div>
           <div className="divide-y divide-slate-800">
-            {SERVICES.map(({ num, title }) => (
+            {tr.items.map(({ num, title }) => (
               <div key={num} className="py-6 flex justify-between items-center group">
                 <div className="space-y-1">
                   <span className="text-slate-400 text-sm font-mono">{num}/</span>
