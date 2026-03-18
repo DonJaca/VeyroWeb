@@ -32,7 +32,6 @@ html {
 /* ── Body minimum height + no horizontal overflow ──────────── */
 body {
   min-height: max(884px, 100dvh);
-  overflow-x: hidden;
 }
 
 /* ── Text outline utility (hero headline, CTA) ──────────────── */

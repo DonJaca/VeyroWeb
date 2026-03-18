@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { Container } from "@/components/layout/Container";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { t } from "@/lib/translations";
 
@@ -9,62 +10,40 @@ export function AboutPreview() {
   const tr = t[lang].about;
 
   return (
-    <section id="o-nas" className="bg-black text-white py-16 lg:py-24 px-6 md:px-10 lg:px-20">
-      <div className="max-w-7xl mx-auto">
-
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12 md:mb-16">
+    <section id="o-nas" className="bg-black py-16 text-white lg:py-24">
+      <Container>
+        <div className="mb-12 flex flex-col justify-between gap-8 md:mb-16 md:flex-row md:items-end">
           <div>
-            <span className="text-primary font-bold tracking-[0.2em] text-xs uppercase block mb-4">
+            <span className="mb-4 block text-xs font-bold uppercase tracking-[0.2em] text-primary">
               {tr.eyebrow}
             </span>
-            <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black uppercase tracking-tighter leading-none">
+            <h2 className="text-3xl font-black uppercase leading-none tracking-tighter sm:text-4xl md:text-6xl lg:text-7xl">
               {tr.heading[0]}{" "}
               <span className="text-outline" style={{ WebkitTextStrokeColor: "white" }}>
                 {tr.heading[1]}
               </span>
             </h2>
           </div>
-          <p className="md:max-w-sm text-white/60 text-base leading-relaxed">
+          <p className="text-base leading-relaxed text-white/60 md:max-w-sm">
             {tr.description}
           </p>
-        </div>
-
-        {/* Stats row */}
-        <div className="grid grid-cols-2 md:grid-cols-4 border-t border-white/10">
-          {tr.stats.map(({ value, label }, i) => (
-            <div
-              key={label}
-              className={`px-4 py-8 md:py-10 flex flex-col gap-2 border-r border-white/10
-                ${i === 1 ? "border-r-0 md:border-r" : ""}
-                ${i === 3 ? "border-r-0" : ""}
-                ${i < 2 ? "border-b border-white/10 md:border-b-0" : ""}`}
-            >
-              <span className="text-4xl md:text-6xl font-black text-primary tracking-tighter leading-none">
-                {value}
-              </span>
-              <span className="text-xs font-bold uppercase tracking-widest text-white/50">
-                {label}
-              </span>
-            </div>
-          ))}
         </div>
 
         <div className="mt-10 md:mt-12">
           <Link
             href="/o-nas"
-            className="group inline-flex items-center gap-3 font-black uppercase tracking-widest text-sm border-2 border-white px-8 py-4 hover:bg-primary hover:border-primary hover:text-black transition-all"
+            className="group inline-flex items-center gap-3 border-2 border-white px-8 py-4 text-sm font-black uppercase tracking-widest transition-all hover:border-primary hover:bg-primary hover:text-black"
           >
             {tr.cta}
             <span
-              className="material-symbols-outlined group-hover:translate-x-2 transition-transform"
+              className="material-symbols-outlined transition-transform group-hover:translate-x-2"
               aria-hidden="true"
             >
               arrow_forward
             </span>
           </Link>
         </div>
-
-      </div>
+      </Container>
     </section>
   );
 }

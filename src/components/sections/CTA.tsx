@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { Container } from "@/components/layout/Container";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { t } from "@/lib/translations";
 
@@ -9,35 +10,23 @@ export function CTA() {
   const tr = t[lang].cta;
 
   return (
-    <section className="py-16 md:py-24 lg:py-32 px-6 md:px-10 lg:px-20 text-center">
-      <div className="max-w-7xl mx-auto">
-
-        {/* Mobile: full-width button above headline */}
-        <a href="mailto:hello@veyro.design" className="md:hidden block w-full bg-primary text-slate-900 text-lg font-black px-8 py-5 uppercase italic hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black transition-all mb-10 text-center">
-          {tr.button}
-        </a>
-
-        <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-black uppercase tracking-tighter mb-10 md:mb-12">
-          {tr.headline} <span className="text-outline">{tr.project}</span>
+    <section className="py-16 text-center md:py-24 lg:py-32">
+      <Container>
+        <h2 className="mb-6 text-4xl font-black uppercase tracking-tighter sm:text-5xl md:text-6xl lg:text-8xl">
+          {tr.headline}
         </h2>
 
-        <div className="flex flex-col md:flex-row items-center justify-center gap-6">
-          <a href="mailto:hello@veyro.design" className="hidden md:block bg-primary text-slate-900 text-xl lg:text-2xl font-black px-10 lg:px-12 py-5 lg:py-6 uppercase italic hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black transition-all">
-            {tr.button}
-          </a>
+        <p className="mx-auto mb-10 max-w-xl text-base leading-relaxed text-slate-500 dark:text-slate-400 md:mb-12 md:text-lg">
+          {tr.description}
+        </p>
 
-          <div className="flex flex-col items-center md:items-start gap-1">
-            <span className="text-xs font-bold uppercase tracking-widest opacity-50">{tr.emailLabel}</span>
-            <a
-              href="mailto:hello@veyro.design"
-              className="text-lg md:text-xl font-black border-b-4 border-primary hover:text-primary transition-colors"
-            >
-              hello@veyro.design
-            </a>
-          </div>
-        </div>
-
-      </div>
+        <Link
+          href="/kontakt"
+          className="inline-block bg-primary px-10 py-5 text-xl font-black uppercase italic text-slate-900 transition-all hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black lg:px-12 lg:py-6 lg:text-2xl"
+        >
+          {tr.button}
+        </Link>
+      </Container>
     </section>
   );
 }

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { Container } from "@/components/layout/Container";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { t } from "@/lib/translations";
 
@@ -41,64 +42,61 @@ export function Works() {
   const tr = t[lang].works;
 
   return (
-    <section id="portfolio" className="py-16 lg:py-20 px-6 md:px-10 lg:px-20 bg-background-light dark:bg-background-dark">
-      <div className="max-w-7xl mx-auto">
-
-        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-10 md:mb-16 gap-4">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tighter leading-none">
+    <section id="portfolio" className="bg-background-light py-16 dark:bg-background-dark lg:py-20">
+      <Container>
+        <div className="mb-10 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end md:mb-16">
+          <h2 className="text-4xl font-black uppercase leading-none tracking-tighter md:text-5xl lg:text-6xl">
             {tr.heading[0]}<br />{tr.heading[1]}
           </h2>
-          <Link href="/portfolio" className="group flex items-center gap-2 font-bold uppercase tracking-widest text-sm hover:text-primary transition-colors flex-shrink-0">
+          <Link href="/portfolio" className="group flex flex-shrink-0 items-center gap-2 text-sm font-bold uppercase tracking-widest transition-colors hover:text-primary">
             {tr.seeAll}
-            <span className="material-symbols-outlined group-hover:translate-x-2 transition-transform" aria-hidden="true">
+            <span className="material-symbols-outlined transition-transform group-hover:translate-x-2" aria-hidden="true">
               arrow_right_alt
             </span>
           </Link>
         </div>
 
-        {/* Desktop: 2-column offset grid */}
-        <div className="hidden md:grid grid-cols-2 gap-x-8 gap-y-16 lg:gap-y-20">
+        <div className="hidden grid-cols-2 gap-x-8 gap-y-16 md:grid lg:gap-y-20">
           {DESKTOP_PROJECTS.map(({ img, alt, tag, title, offset }) => (
             <article
               key={title}
-              className={`flex flex-col gap-6 group cursor-pointer${offset ? " md:mt-20 lg:mt-32" : ""}`}
+              className={`group flex cursor-pointer flex-col gap-6${offset ? " md:mt-20 lg:mt-32" : ""}`}
             >
-              <div className="aspect-[4/5] bg-slate-100 dark:bg-slate-900 overflow-hidden">
+              <div className="aspect-[4/5] overflow-hidden bg-slate-100 dark:bg-slate-900">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={img}
                   alt={alt}
-                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 scale-110 group-hover:scale-100"
+                  className="h-full w-full scale-110 object-cover grayscale transition-all duration-700 hover:grayscale-0 group-hover:scale-100"
                 />
               </div>
               <div>
-                <p className="text-xs font-bold text-primary uppercase tracking-widest mb-2">{tag}</p>
-                <h4 className="text-2xl lg:text-3xl font-black uppercase italic">{title}</h4>
+                <p className="mb-2 text-xs font-bold uppercase tracking-widest text-primary">{tag}</p>
+                <h4 className="text-2xl font-black uppercase italic lg:text-3xl">{title}</h4>
               </div>
             </article>
           ))}
         </div>
 
-        {/* Mobile: single-column stack */}
-        <div className="md:hidden space-y-12">
+        <div className="space-y-12 md:hidden">
           {MOBILE_PROJECTS.map(({ bg, alt, tag, title }) => (
             <article key={title} className="group">
-              <div className="aspect-square overflow-hidden mb-5 bg-slate-100 dark:bg-slate-900">
+              <div className="mb-5 aspect-square overflow-hidden bg-slate-100 dark:bg-slate-900">
                 <div
-                  className="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                  className="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
                   style={{ backgroundImage: `url('${bg}')` }}
                   role="img"
                   aria-label={alt}
                 />
               </div>
-              <div className="flex justify-between items-start gap-4">
+              <div className="flex items-start justify-between gap-4">
                 <div className="min-w-0">
-                  <p className="text-primary font-bold text-xs uppercase tracking-widest mb-2">{tag}</p>
-                  <h4 className="text-xl font-bold group-hover:underline decoration-primary underline-offset-8">
+                  <p className="mb-2 text-xs font-bold uppercase tracking-widest text-primary">{tag}</p>
+                  <h4 className="text-xl font-bold decoration-primary underline-offset-8 group-hover:underline">
                     {title}
                   </h4>
                 </div>
-                <button className="bg-primary/10 dark:bg-primary/20 p-3 rounded-full flex-shrink-0" aria-label={`Otwórz ${title}`}>
+                <button className="flex-shrink-0 rounded-full bg-primary/10 p-3 dark:bg-primary/20" aria-label={`Otwórz ${title}`}>
                   <span className="material-symbols-outlined text-primary" aria-hidden="true">north_east</span>
                 </button>
               </div>
@@ -106,13 +104,12 @@ export function Works() {
           ))}
         </div>
 
-        <div className="md:hidden mt-12">
-          <Link href="/portfolio" className="block w-full py-4 border-2 border-slate-900 dark:border-white text-slate-900 dark:text-white font-black uppercase tracking-widest text-sm hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors text-center">
+        <div className="mt-12 md:hidden">
+          <Link href="/portfolio" className="block w-full border-2 border-slate-900 py-4 text-center text-sm font-black uppercase tracking-widest text-slate-900 transition-colors hover:bg-slate-900 hover:text-white dark:border-white dark:text-white dark:hover:bg-white dark:hover:text-black">
             {tr.explore}
           </Link>
         </div>
-
-      </div>
+      </Container>
     </section>
   );
 }

@@ -1,5 +1,6 @@
 "use client";
 
+import { Container } from "@/components/layout/Container";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { t } from "@/lib/translations";
 
@@ -9,17 +10,19 @@ export function SocialProof() {
   const { lang } = useLanguage();
 
   return (
-    <section className="py-12 md:py-20 border-y border-slate-200 dark:border-slate-800 px-6 md:px-10 lg:px-20">
-      <p className="text-center font-bold uppercase tracking-[0.3em] md:tracking-[0.5em] text-xs opacity-50 mb-8 md:mb-12">
-        {t[lang].socialProof}
-      </p>
-      <div className="max-w-7xl mx-auto flex flex-wrap justify-center gap-6 md:gap-16 lg:gap-24 opacity-60 grayscale hover:grayscale-0 transition-all">
-        {TECHNOLOGIES.map((name) => (
-          <span key={name} className="text-lg md:text-2xl font-black italic tracking-tighter">
-            {name}
-          </span>
-        ))}
-      </div>
+    <section className="border-y border-slate-200 py-12 dark:border-slate-800 md:py-20">
+      <Container>
+        <p className="mb-8 text-center text-xs font-bold uppercase tracking-[0.3em] opacity-50 md:mb-12 md:tracking-[0.5em]">
+          {t[lang].socialProof}
+        </p>
+        <div className="flex flex-wrap justify-center gap-6 opacity-60 grayscale transition-all hover:grayscale-0 md:gap-16 lg:gap-24">
+          {TECHNOLOGIES.map((name) => (
+            <span key={name} className="text-lg font-black italic tracking-tighter md:text-2xl">
+              {name}
+            </span>
+          ))}
+        </div>
+      </Container>
     </section>
   );
 }

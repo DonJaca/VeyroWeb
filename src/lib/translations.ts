@@ -17,7 +17,7 @@ export const t = {
     hero: {
       eyebrow: "Kierunek Kreatywny & Digital Design",
       description:
-        "Projektujemy wydajne doświadczenia cyfrowe, łącząc unikalną dynamikę układu z surową, brutalistyczną estetyką.",
+        "Tworzymy odważne produkty cyfrowe, które wyróżniają Twoją markę. Łączymy wyrazistą estetykę z intuicyjną użytecznością, aby przyciągać uwagę i generować wyniki.",
       viewWork: "Zobacz portfolio",
       contact: "Skontaktuj się z nami",
     },
@@ -25,17 +25,17 @@ export const t = {
       {
         icon: "bolt",
         title: "Odważna Wizja",
-        description: "Przesuwamy granice nowoczesnego UI, wychodząc daleko poza standardowe systemy siatek.",
+        description: "Przełamujemy schematy. Projektujemy interfejsy, które zapadają w pamięć i wyróżniają się na tle konkurencji.",
       },
       {
         icon: "account_circle",
-        title: "Zorientowanie na Użytkownika",
-        description: "Łączymy brutalistyczną estetykę z intuicyjną użytecznością, która angażuje i konwertuje.",
+        title: "Zorientowanie na Wyniki",
+        description: "Design to nie tylko wygląd. Tworzymy intuicyjne ścieżki użytkownika, które zwiększają zaangażowanie i konwersję.",
       },
       {
         icon: "palette",
-        title: "Wysoki Kontrast",
-        description: "Wyraziste, monochromatyczne palety z charakterystycznymi pomarańczowymi akcentami, budujące zapadającą w pamięć tożsamość.",
+        title: "Wyrazisty Charakter",
+        description: "Budujemy silną tożsamość wizualną poprzez przemyślany kontrast i typografię, precyzyjnie kierując uwagą odbiorcy.",
       },
     ],
     services: {
@@ -51,19 +51,28 @@ export const t = {
     },
     works: {
       heading: ["Wybrane", "Realizacje"],
-      seeAll: "Zobacz wszystkie projekty",
+      seeAll: "Zobacz, co stworzyliśmy",
       explore: "Przeglądaj archiwum",
     },
     socialProof: "Tworzymy w oparciu o nowoczesne technologie",
     cta: {
-      headline: "Masz nowy",
-      project: "Projekt?",
+      headline: "Porozmawiajmy o Twoim Projekcie",
+      description: "Gotowy na odważne zmiany? Opowiedz nam o swoich celach, a my zaproponujemy rozwiązania, które pomogą Ci je osiągnąć.",
       button: "Rozpocznijmy rozmowę",
-      emailLabel: "Napisz do nas na:",
+    },
+    contact: {
+      eyebrow: "Napisz do nas",
+      heading: ["Skontaktuj", "się z nami"],
+      intro: "Opowiedz nam o swoim projekcie. Odpiszemy w ciągu 24 godzin.",
+      namePlaceholder: "Imię i nazwisko",
+      emailPlaceholder: "Adres e-mail",
+      messagePlaceholder: "Opowiedz nam o swoim projekcie...",
+      send: "Wyślij wiadomość",
+      direct: "Lub napisz bezpośrednio na",
     },
     footer: {
       description:
-        "Niezależne studio kreatywne skupione na zaawansowanych rozwiązaniach cyfrowych i wyrazistej narracji wizualnej. Z siedzibą w Helsinkach, działające globalnie.",
+        "Niezależne studio kreatywne skupione na zaawansowanych rozwiązaniach cyfrowych i wyrazistej narracji wizualnej.",
       nav: "Nawigacja",
       navLinks: ["Usługi", "Portfolio", "O nas", "Kontakt"],
       office: "Biuro",
@@ -82,8 +91,8 @@ export const t = {
     },
     approach: {
       eyebrow: "Jak Pracujemy",
-      heading: ["Nasze", "Podejście"],
-      intro: "Skuteczny proces to fundament każdego udanego projektu. Każdy etap jest przemyślany i zorientowany na rezultat.",
+      heading: "Sprawdzony Proces",
+      intro: "Przejrzysta współpraca to fundament sukcesu. Prowadzimy Cię krok po kroku od pierwszej koncepcji aż po finalne wdrożenie, skupiając się na mierzalnych rezultatach.",
       cta: "Zobacz pełny proces",
       steps: [
         { num: "01", title: "Odkrycie",   desc: "Zagłębiamy się w Twoją markę, grupę docelową i cele biznesowe, by w pełni zrozumieć kontekst projektu i oczekiwania." },
@@ -96,7 +105,7 @@ export const t = {
     about: {
       eyebrow: "Studio Kreatywne",
       heading: ["O", "Nas"],
-      description: "Jesteśmy niezależnym studiem kreatywnym, które łączy brutalistyczną estetykę z nowoczesną funkcjonalnością. Tworzymy cyfrowe doświadczenia, które zapadają w pamięć i przynoszą realne rezultaty.",
+      description: "Veyro to młode, niezależne studio projektowe. Nie mamy setek projektów za sobą — mamy za to głód tworzenia rzeczy, z których będziemy dumni. Twój projekt nie będzie dla nas kolejnym zleceniem. Będzie dla nas powodem do dumy.",
       cta: "Poznaj nas bliżej",
       missionTitle: "Nasza Misja",
       mission: "Wierzymy, że doskonały design to nie tylko estetyka — to narzędzie, które buduje marki, angażuje odbiorców i napędza wzrost. Każdy piksel ma znaczenie.",
@@ -157,14 +166,23 @@ export const t = {
     },
     socialProof: "Built with modern technologies",
     cta: {
-      headline: "Have a",
-      project: "Project?",
+      headline: "Let's Talk About Your Project",
+      description: "Ready for bold change? Tell us about your goals and we'll propose solutions to help you achieve them.",
       button: "Start a Conversation",
-      emailLabel: "Email me at",
+    },
+    contact: {
+      eyebrow: "Get in touch",
+      heading: ["Contact", "us"],
+      intro: "Tell us about your project. We'll respond within 24 hours.",
+      namePlaceholder: "Full name",
+      emailPlaceholder: "Email address",
+      messagePlaceholder: "Tell us about your project...",
+      send: "Send message",
+      direct: "Or write directly to",
     },
     footer: {
       description:
-        "An independent creative studio focused on high-end digital solutions and expressive visual narratives. Based in Helsinki, working globally.",
+        "An independent creative studio focused on high-end digital solutions and expressive visual narratives.",
       nav: "Navigation",
       navLinks: ["Services", "Work", "About", "Contact"],
       office: "Office",
@@ -183,7 +201,7 @@ export const t = {
     },
     approach: {
       eyebrow: "How We Work",
-      heading: ["Our", "Approach"],
+      heading: "Our Approach",
       intro: "An effective process is the foundation of every successful project. Each stage is deliberate and results-driven.",
       cta: "See Full Process",
       steps: [
