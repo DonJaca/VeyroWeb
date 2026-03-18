@@ -74,9 +74,9 @@ export function Header() {
             </span>
           </button>
 
-          <button className="bg-primary hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black text-slate-900 font-black px-6 py-2 uppercase text-sm transition-all">
+          <a href="mailto:hello@veyro.design" className="bg-primary hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black text-slate-900 font-black px-6 py-2 uppercase text-sm transition-all">
             {tr.nav.cta}
-          </button>
+          </a>
         </div>
 
         {/* Mobile: icon row */}
@@ -123,9 +123,9 @@ export function Header() {
               {label}
             </Link>
           ))}
-          <button className="mt-2 bg-primary text-slate-900 font-black px-6 py-3 uppercase text-sm w-full">
+          <a href="mailto:hello@veyro.design" className="mt-2 block bg-primary text-slate-900 font-black px-6 py-3 uppercase text-sm w-full text-center">
             {tr.nav.cta}
-          </button>
+          </a>
         </div>
       )}
     </header>

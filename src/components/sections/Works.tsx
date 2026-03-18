@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { t } from "@/lib/translations";
 
@@ -47,12 +48,12 @@ export function Works() {
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tighter leading-none">
             {tr.heading[0]}<br />{tr.heading[1]}
           </h2>
-          <button className="group flex items-center gap-2 font-bold uppercase tracking-widest text-sm hover:text-primary transition-colors flex-shrink-0">
+          <Link href="/portfolio" className="group flex items-center gap-2 font-bold uppercase tracking-widest text-sm hover:text-primary transition-colors flex-shrink-0">
             {tr.seeAll}
             <span className="material-symbols-outlined group-hover:translate-x-2 transition-transform" aria-hidden="true">
               arrow_right_alt
             </span>
-          </button>
+          </Link>
         </div>
 
         {/* Desktop: 2-column offset grid */}
@@ -106,9 +107,9 @@ export function Works() {
         </div>
 
         <div className="md:hidden mt-12">
-          <button className="w-full py-4 border-2 border-slate-900 dark:border-white text-slate-900 dark:text-white font-black uppercase tracking-widest text-sm hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors">
+          <Link href="/portfolio" className="block w-full py-4 border-2 border-slate-900 dark:border-white text-slate-900 dark:text-white font-black uppercase tracking-widest text-sm hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors text-center">
             {tr.explore}
-          </button>
+          </Link>
         </div>
 
       </div>
