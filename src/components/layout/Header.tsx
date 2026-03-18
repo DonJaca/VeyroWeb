@@ -53,7 +53,7 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
-      <nav className="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto lg:px-20">
+      <nav className="flex items-center justify-between px-6 md:px-10 py-4 max-w-7xl mx-auto lg:px-20">
 
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 flex-shrink-0">
