@@ -63,7 +63,7 @@ export const t = {
       description:
         "Niezależne studio kreatywne skupione na zaawansowanych rozwiązaniach cyfrowych i wyrazistej narracji wizualnej. Z siedzibą w Helsinkach, działające globalnie.",
       nav: "Nawigacja",
-      navLinks: ["Usługi", "Portfolio", "Studio", "Kontakt"],
+      navLinks: ["Usługi", "Portfolio", "O nas", "Kontakt"],
       office: "Biuro",
       socials: "Social Media",
       copyright: "© 2024 VEYRO DESIGN STUDIO. WSZYSTKIE PRAWA ZASTRZEŻONE.",
@@ -162,7 +162,7 @@ export const t = {
       description:
         "An independent creative studio focused on high-end digital solutions and expressive visual narratives. Based in Helsinki, working globally.",
       nav: "Navigation",
-      navLinks: ["Services", "Work", "Studio", "Contact"],
+      navLinks: ["Services", "Work", "About", "Contact"],
       office: "Office",
       socials: "Socials",
       copyright: "© 2024 VEYRO DESIGN STUDIO. ALL RIGHTS RESERVED.",
