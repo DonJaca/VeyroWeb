@@ -1,12 +1,12 @@
 export type Lang = "pl" | "en";
 
 /* Nav routes — language-independent */
-export const NAV_ROUTES = ["/#portfolio", "/#uslugi", "/podejscie", "/o-nas"] as const;
+export const NAV_ROUTES = ["/#uslugi", "/#portfolio", "/podejscie", "/o-nas"] as const;
 
 export const t = {
   pl: {
     nav: {
-      links: ["Portfolio", "Usługi", "Podejście", "O nas"] as const,
+      links: ["Usługi", "Portfolio", "Podejście", "O nas"] as const,
       cta: "Porozmawiajmy",
     },
     hero: {
@@ -60,7 +60,7 @@ export const t = {
       description:
         "Niezależne studio kreatywne skupione na zaawansowanych rozwiązaniach cyfrowych i wyrazistej narracji wizualnej. Z siedzibą w Helsinkach, działające globalnie.",
       nav: "Nawigacja",
-      navLinks: ["Portfolio", "Usługi", "Studio", "Kontakt"],
+      navLinks: ["Usługi", "Portfolio", "Studio", "Kontakt"],
       office: "Biuro",
       socials: "Social Media",
       copyright: "© 2024 VEYRO DESIGN STUDIO. WSZYSTKIE PRAWA ZASTRZEŻONE.",
@@ -105,7 +105,7 @@ export const t = {
 
   en: {
     nav: {
-      links: ["Work", "Services", "Process", "About"] as const,
+      links: ["Services", "Work", "Process", "About"] as const,
       cta: "Let's Talk",
     },
     hero: {
@@ -159,7 +159,7 @@ export const t = {
       description:
         "An independent creative studio focused on high-end digital solutions and expressive visual narratives. Based in Helsinki, working globally.",
       nav: "Navigation",
-      navLinks: ["Work", "Services", "Studio", "Contact"],
+      navLinks: ["Services", "Work", "Studio", "Contact"],
       office: "Office",
       socials: "Socials",
       copyright: "© 2024 VEYRO DESIGN STUDIO. ALL RIGHTS RESERVED.",
