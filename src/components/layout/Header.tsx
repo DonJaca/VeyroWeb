@@ -1,23 +1,55 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useDarkMode } from "@/hooks/useDarkMode";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { t, NAV_ROUTES } from "@/lib/translations";
 
+/* IDs of anchor sections on the homepage */
+const ANCHOR_SECTIONS = ["portfolio", "uslugi"];
+
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState<string | null>(null);
   const { isDark, toggle: toggleDark } = useDarkMode();
   const { lang, toggle: toggleLang } = useLanguage();
   const pathname = usePathname();
   const tr = t[lang];
 
-  const isActive = (route: string) =>
-    route.startsWith("/#")
-      ? pathname === "/"
-      : pathname === route;
+  /* Track which anchor section is in view */
+  useEffect(() => {
+    if (pathname !== "/") {
+      setActiveSection(null);
+      return;
+    }
+
+    const observers: IntersectionObserver[] = [];
+
+    ANCHOR_SECTIONS.forEach((id) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) setActiveSection(id);
+        },
+        { threshold: 0.35 }
+      );
+      observer.observe(el);
+      observers.push(observer);
+    });
+
+    return () => observers.forEach((o) => o.disconnect());
+  }, [pathname]);
+
+  const isActive = (route: string) => {
+    if (route.startsWith("/#")) {
+      if (pathname !== "/") return false;
+      return activeSection === route.slice(2);
+    }
+    return pathname === route;
+  };
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
