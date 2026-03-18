@@ -131,35 +131,41 @@ export function Header() {
           </button>
           <button
             onClick={() => setMenuOpen((o) => !o)}
-            className="p-2 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors rounded-full"
+            className="p-2 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors"
             aria-label={menuOpen ? "Zamknij menu" : "Otwórz menu"}
             aria-expanded={menuOpen}
           >
-            <span className="material-symbols-outlined">{menuOpen ? "close" : "menu"}</span>
+            <div className="flex flex-col justify-center items-center w-6 h-6 gap-[5px]">
+              <span className={`block h-0.5 w-6 bg-current transition-all duration-300 origin-center ${menuOpen ? "rotate-45 translate-y-[7px]" : ""}`} />
+              <span className={`block h-0.5 w-6 bg-current transition-all duration-300 ${menuOpen ? "opacity-0 scale-x-0" : ""}`} />
+              <span className={`block h-0.5 w-6 bg-current transition-all duration-300 origin-center ${menuOpen ? "-rotate-45 -translate-y-[7px]" : ""}`} />
+            </div>
           </button>
         </div>
       </nav>
 
       {/* Mobile: slide-down menu */}
-      {menuOpen && (
-        <div className="md:hidden border-t border-slate-200 dark:border-slate-800 px-6 py-6 flex flex-col gap-4 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md">
-          {tr.nav.links.map((label, i) => (
-            <Link
-              key={label}
-              href={NAV_ROUTES[i]}
-              className={`text-sm font-bold uppercase tracking-widest transition-colors ${
-                isActive(NAV_ROUTES[i]) ? "text-primary" : "hover:text-primary"
-              }`}
-              onClick={() => setMenuOpen(false)}
-            >
-              {label}
-            </Link>
-          ))}
-          <a href="mailto:hello@veyro.design" className="mt-2 block bg-primary text-slate-900 font-black px-6 py-3 uppercase text-sm w-full text-center">
-            {tr.nav.cta}
-          </a>
+      <div className={`md:hidden grid transition-all duration-300 ease-in-out ${menuOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}>
+        <div className="min-h-0 overflow-hidden">
+          <div className="border-t border-slate-200 dark:border-slate-800 px-6 py-6 flex flex-col gap-4 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md">
+            {tr.nav.links.map((label, i) => (
+              <Link
+                key={label}
+                href={NAV_ROUTES[i]}
+                className={`text-sm font-bold uppercase tracking-widest transition-colors ${
+                  isActive(NAV_ROUTES[i]) ? "text-primary" : "hover:text-primary"
+                }`}
+                onClick={() => setMenuOpen(false)}
+              >
+                {label}
+              </Link>
+            ))}
+            <a href="mailto:hello@veyro.design" className="mt-2 block bg-primary text-slate-900 font-black px-6 py-3 uppercase text-sm w-full text-center">
+              {tr.nav.cta}
+            </a>
+          </div>
         </div>
-      )}
+      </div>
     </header>
   );
 }
