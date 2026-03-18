@@ -3,6 +3,9 @@ export type Lang = "pl" | "en";
 /* Nav routes — language-independent */
 export const NAV_ROUTES = ["/#uslugi", "/#portfolio", "/podejscie", "/o-nas"] as const;
 
+/* Footer nav: Usługi, Portfolio, Studio, Kontakt */
+export const FOOTER_NAV_ROUTES = ["/#uslugi", "/#portfolio", "/o-nas", "mailto:hello@veyro.design"] as const;
+
 export const t = {
   pl: {
     nav: {

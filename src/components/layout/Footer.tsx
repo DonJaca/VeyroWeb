@@ -1,7 +1,7 @@
 "use client";
 
 import { useLanguage } from "@/contexts/LanguageContext";
-import { t } from "@/lib/translations";
+import { t, FOOTER_NAV_ROUTES } from "@/lib/translations";
 
 export function Footer() {
   const { lang } = useLanguage();
@@ -40,9 +40,9 @@ export function Footer() {
           <div className="flex flex-col gap-4">
             <h3 className="font-black uppercase tracking-widest text-primary text-sm">{tr.nav}</h3>
             <ul className="flex flex-col gap-3 opacity-60">
-              {tr.navLinks.map((item) => (
+              {tr.navLinks.map((item, i) => (
                 <li key={item}>
-                  <a href="#" className="hover:text-primary transition-colors">{item}</a>
+                  <a href={FOOTER_NAV_ROUTES[i]} className="hover:text-primary transition-colors">{item}</a>
                 </li>
               ))}
             </ul>
@@ -70,9 +70,9 @@ export function Footer() {
             <div className="flex flex-col gap-4">
               <h3 className="font-black uppercase tracking-widest text-primary text-sm">{tr.nav}</h3>
               <ul className="flex flex-col gap-3 opacity-60 text-sm">
-                {tr.navLinks.map((item) => (
+                {tr.navLinks.map((item, i) => (
                   <li key={item}>
-                    <a href="#" className="hover:text-primary transition-colors">{item}</a>
+                    <a href={FOOTER_NAV_ROUTES[i]} className="hover:text-primary transition-colors">{item}</a>
                   </li>
                 ))}
               </ul>
