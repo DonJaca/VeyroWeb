@@ -65,7 +65,10 @@ export default function ONas() {
             {tr.stats.map(({ value, label }, i) => (
               <div
                 key={i}
-                className="px-6 md:px-10 lg:px-20 py-12 md:py-16 border-b md:border-b-0 border-r border-slate-200 dark:border-slate-800 last:border-r-0"
+                className={`px-6 md:px-10 lg:px-20 py-12 md:py-16 border-r border-slate-200 dark:border-slate-800
+                  ${i === 1 ? "border-r-0 md:border-r" : ""}
+                  ${i === 3 ? "border-r-0" : ""}
+                  ${i < 2 ? "border-b border-slate-200 dark:border-slate-800 md:border-b-0" : ""}`}
               >
                 <div className="text-4xl md:text-6xl font-black text-primary tracking-tighter">
                   {value}
