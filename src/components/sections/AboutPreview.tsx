@@ -17,7 +17,7 @@ export function AboutPreview() {
             <span className="text-primary font-bold tracking-[0.2em] text-xs uppercase block mb-4">
               {tr.eyebrow}
             </span>
-            <h2 className="text-4xl md:text-6xl lg:text-7xl font-black uppercase tracking-tighter leading-none">
+            <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black uppercase tracking-tighter leading-none">
               {tr.heading[0]}{" "}
               <span className="text-outline" style={{ WebkitTextStrokeColor: "white" }}>
                 {tr.heading[1]}
