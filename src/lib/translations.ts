@@ -1,7 +1,7 @@
 export type Lang = "pl" | "en";
 
 /* Nav routes — language-independent */
-export const NAV_ROUTES = ["/portfolio", "/#uslugi", "/podejscie", "/o-nas"] as const;
+export const NAV_ROUTES = ["/#portfolio", "/#uslugi", "/podejscie", "/o-nas"] as const;
 
 export const t = {
   pl: {

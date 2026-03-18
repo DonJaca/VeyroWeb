@@ -41,7 +41,7 @@ export function Works() {
   const tr = t[lang].works;
 
   return (
-    <section className="py-16 lg:py-20 px-6 md:px-10 lg:px-20 bg-background-light dark:bg-background-dark">
+    <section id="portfolio" className="py-16 lg:py-20 px-6 md:px-10 lg:px-20 bg-background-light dark:bg-background-dark">
       <div className="max-w-7xl mx-auto">
 
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-10 md:mb-16 gap-4">

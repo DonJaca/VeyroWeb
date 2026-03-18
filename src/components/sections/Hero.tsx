@@ -40,9 +40,9 @@ export function Hero() {
 
             {/* Mobile CTA buttons */}
             <div className="flex flex-wrap gap-3 md:hidden">
-              <Link href="/portfolio" className="bg-primary hover:bg-black text-slate-900 hover:text-white font-black px-6 py-3 uppercase text-sm transition-all">
+              <a href="#portfolio" className="bg-primary hover:bg-black text-slate-900 hover:text-white font-black px-6 py-3 uppercase text-sm transition-all">
                 {tr.viewWork}
-              </Link>
+              </a>
               <a href="mailto:hello@veyro.design" className="border border-slate-900 dark:border-slate-100 px-6 py-3 font-black text-sm uppercase tracking-widest hover:bg-primary transition-colors">
                 {tr.contact}
               </a>
