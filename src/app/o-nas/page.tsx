@@ -3,8 +3,9 @@
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { CTA } from "@/components/sections/CTA";
+import Link from "next/link";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { t } from "@/lib/translations";
+import { t, BACK_LABEL } from "@/lib/translations";
 
 const VALUES = [
   { icon: "bolt", label: "Bold Design" },
@@ -21,8 +22,16 @@ export default function ONas() {
     <>
       <Header />
       <main className="flex-grow">
+        {/* Back link */}
+        <div className="px-6 md:px-10 lg:px-20 pt-6 max-w-7xl mx-auto">
+          <Link href="/#o-nas" className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-slate-500 hover:text-primary transition-colors">
+            <span className="material-symbols-outlined text-base" aria-hidden="true">arrow_back</span>
+            {BACK_LABEL[lang]}
+          </Link>
+        </div>
+
         {/* Hero header */}
-        <section className="px-6 md:px-10 lg:px-20 pt-16 md:pt-24 pb-12 md:pb-16 max-w-7xl mx-auto">
+        <section className="px-6 md:px-10 lg:px-20 pt-8 md:pt-12 pb-12 md:pb-16 max-w-7xl mx-auto">
           <span className="text-primary font-bold tracking-[0.2em] text-xs uppercase block mb-4">
             {tr.eyebrow}
           </span>
