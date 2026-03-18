@@ -8,12 +8,12 @@ export function ValueProposition() {
   const items = t[lang].valueProps;
 
   return (
-    <section className="hidden md:block py-20 border-t border-slate-200 dark:border-slate-800 px-6 lg:px-20">
-      <div className="max-w-7xl mx-auto grid grid-cols-3 gap-12">
+    <section className="py-12 md:py-20 border-t border-slate-200 dark:border-slate-800 px-6 md:px-10 lg:px-20">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-12">
         {items.map(({ icon, title, description }) => (
           <div
             key={title}
-            className="flex flex-col gap-6 p-8 border border-slate-200 dark:border-slate-800 hover:border-primary transition-colors"
+            className="flex flex-col gap-4 md:gap-6 p-6 md:p-8 border border-slate-200 dark:border-slate-800 hover:border-primary transition-colors"
           >
             <span className="material-symbols-outlined text-4xl text-primary" aria-hidden="true">
               {icon}
