@@ -1,19 +1,63 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ── Class-based dark mode (.dark on <html>) ───────────────── */
+@variant dark (&:where(.dark, .dark *));
+
+/* ── Theme: colors, fonts, border-radius ───────────────────── */
+@theme {
+  /* Brand colors */
+  --color-primary:           #FF6B00;
+  --color-background-light:  #f8f8f5;
+  --color-background-dark:   #121212;
+
+  /* Fonts (CSS vars injected by next/font) */
+  --font-display: var(--font-inter), sans-serif;
+  --font-sans:    var(--font-inter), sans-serif;
+
+  /* Brutalist: all border-radius = 0 except full */
+  --radius:    0rem;
+  --radius-sm: 0rem;
+  --radius-md: 0rem;
+  --radius-lg: 0rem;
+  --radius-xl: 0rem;
+  --radius-2xl: 0rem;
+  --radius-3xl: 0rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ── Body minimum height + no horizontal overflow ──────────── */
+body {
+  min-height: max(884px, 100dvh);
+  overflow-x: hidden;
+}
+
+/* ── Text outline utility (hero headline, CTA) ──────────────── */
+.text-outline {
+  -webkit-text-stroke: 1px currentColor;
+  color: transparent;
+}
+
+/* ── Material Symbols: FILL axis ────────────────────────────── */
+.fill-1 {
+  font-variation-settings: 'FILL' 1;
+}
+
+/* ── Custom 12-column grid ──────────────────────────────────── */
+.custom-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1.5rem;
+}
+
+/* ── Mobile: Syne font for headings ─────────────────────────── */
+@media (max-width: 767px) {
+  h1, h2, h3 {
+    font-family: var(--font-syne), sans-serif;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ── Mobile bottom nav: iOS safe area ──────────────────────── */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .bottom-nav-inner {
+    padding-bottom: calc(0.75rem + env(safe-area-inset-bottom));
+  }
 }
