@@ -27,8 +27,8 @@ export function ApproachPreview() {
           </p>
         </div>
 
-        {/* Step numbers row */}
-        <div className="grid grid-cols-5 border-t border-slate-200 dark:border-slate-800">
+        {/* Step numbers row — visible from 576px */}
+        <div className="hidden sm:grid grid-cols-5 border-t border-slate-200 dark:border-slate-800">
           {tr.steps.map(({ num, title }) => (
             <div
               key={num}
