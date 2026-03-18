@@ -8,7 +8,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { t, NAV_ROUTES } from "@/lib/translations";
 
 /* IDs of anchor sections on the homepage */
-const ANCHOR_SECTIONS = ["portfolio", "uslugi"];
+const ANCHOR_SECTIONS = ["uslugi", "portfolio", "podejscie", "o-nas"];
 
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);

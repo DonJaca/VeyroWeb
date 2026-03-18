@@ -1,7 +1,7 @@
 export type Lang = "pl" | "en";
 
 /* Nav routes — language-independent */
-export const NAV_ROUTES = ["/#uslugi", "/#portfolio", "/podejscie", "/o-nas"] as const;
+export const NAV_ROUTES = ["/#uslugi", "/#portfolio", "/#podejscie", "/#o-nas"] as const;
 
 /* Footer nav: Usługi, Portfolio, Studio, Kontakt */
 export const FOOTER_NAV_ROUTES = ["/#uslugi", "/#portfolio", "/o-nas", "mailto:hello@veyro.design"] as const;
@@ -82,6 +82,7 @@ export const t = {
       eyebrow: "Jak Pracujemy",
       heading: ["Nasze", "Podejście"],
       intro: "Skuteczny proces to fundament każdego udanego projektu. Każdy etap jest przemyślany i zorientowany na rezultat.",
+      cta: "Zobacz pełny proces",
       steps: [
         { num: "01", title: "Odkrycie",   desc: "Zagłębiamy się w Twoją markę, grupę docelową i cele biznesowe, by w pełni zrozumieć kontekst projektu i oczekiwania." },
         { num: "02", title: "Strategia",  desc: "Na podstawie researchu wypracowujemy jasną strategię wizualną, architekturę informacji i roadmapę działań." },
@@ -94,6 +95,7 @@ export const t = {
       eyebrow: "Studio Kreatywne",
       heading: ["O", "Nas"],
       description: "Jesteśmy niezależnym studiem kreatywnym, które łączy brutalistyczną estetykę z nowoczesną funkcjonalnością. Tworzymy cyfrowe doświadczenia, które zapadają w pamięć i przynoszą realne rezultaty.",
+      cta: "Poznaj nas bliżej",
       missionTitle: "Nasza Misja",
       mission: "Wierzymy, że doskonały design to nie tylko estetyka — to narzędzie, które buduje marki, angażuje odbiorców i napędza wzrost. Każdy piksel ma znaczenie.",
       stats: [
@@ -181,6 +183,7 @@ export const t = {
       eyebrow: "How We Work",
       heading: ["Our", "Approach"],
       intro: "An effective process is the foundation of every successful project. Each stage is deliberate and results-driven.",
+      cta: "See Full Process",
       steps: [
         { num: "01", title: "Discovery",    desc: "We dive deep into your brand, target audience and business goals to fully understand the project context and expectations." },
         { num: "02", title: "Strategy",     desc: "Based on research, we develop a clear visual strategy, information architecture and action roadmap." },
@@ -193,6 +196,7 @@ export const t = {
       eyebrow: "Creative Studio",
       heading: ["About", "Us"],
       description: "We are an independent creative studio combining brutalist aesthetics with modern functionality. We create digital experiences that are remembered and deliver real results.",
+      cta: "Learn About Us",
       missionTitle: "Our Mission",
       mission: "We believe great design is not just aesthetics — it's a tool that builds brands, engages audiences and drives growth. Every pixel matters.",
       stats: [
