@@ -2,15 +2,22 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useDarkMode } from "@/hooks/useDarkMode";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { t } from "@/lib/translations";
+import { t, NAV_ROUTES } from "@/lib/translations";
 
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const { isDark, toggle: toggleDark } = useDarkMode();
   const { lang, toggle: toggleLang } = useLanguage();
+  const pathname = usePathname();
   const tr = t[lang];
+
+  const isActive = (route: string) =>
+    route.startsWith("/#")
+      ? pathname === "/"
+      : pathname === route;
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
@@ -28,11 +35,15 @@ export function Header() {
 
         {/* Desktop: nav links */}
         <div className="hidden md:flex items-center gap-10">
-          {tr.nav.links.map((label) => (
+          {tr.nav.links.map((label, i) => (
             <Link
               key={label}
-              href="#"
-              className="text-sm font-bold uppercase tracking-widest hover:text-primary transition-colors"
+              href={NAV_ROUTES[i]}
+              className={`text-sm font-bold uppercase tracking-widest transition-colors ${
+                isActive(NAV_ROUTES[i])
+                  ? "text-primary"
+                  : "hover:text-primary"
+              }`}
             >
               {label}
             </Link>
@@ -70,7 +81,6 @@ export function Header() {
 
         {/* Mobile: icon row */}
         <div className="flex md:hidden items-center gap-1">
-          {/* Language toggle — mobile */}
           <button
             onClick={toggleLang}
             className="text-xs font-black uppercase tracking-widest border border-slate-300 dark:border-slate-700 hover:border-primary hover:text-primary transition-all px-2 py-1"
@@ -78,7 +88,6 @@ export function Header() {
           >
             {lang === "pl" ? "EN" : "PL"}
           </button>
-
           <button
             onClick={toggleDark}
             className="p-2 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors rounded-full"
@@ -88,7 +97,6 @@ export function Header() {
               {isDark ? "light_mode" : "dark_mode"}
             </span>
           </button>
-
           <button
             onClick={() => setMenuOpen((o) => !o)}
             className="p-2 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors rounded-full"
@@ -103,11 +111,13 @@ export function Header() {
       {/* Mobile: slide-down menu */}
       {menuOpen && (
         <div className="md:hidden border-t border-slate-200 dark:border-slate-800 px-6 py-6 flex flex-col gap-4 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md">
-          {tr.nav.links.map((label) => (
+          {tr.nav.links.map((label, i) => (
             <Link
               key={label}
-              href="#"
-              className="text-sm font-bold uppercase tracking-widest hover:text-primary transition-colors"
+              href={NAV_ROUTES[i]}
+              className={`text-sm font-bold uppercase tracking-widest transition-colors ${
+                isActive(NAV_ROUTES[i]) ? "text-primary" : "hover:text-primary"
+              }`}
               onClick={() => setMenuOpen(false)}
             >
               {label}

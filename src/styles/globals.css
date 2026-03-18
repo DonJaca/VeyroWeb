@@ -24,6 +24,11 @@
   --radius-3xl: 0rem;
 }
 
+/* ── Smooth scroll ──────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}
+
 /* ── Body minimum height + no horizontal overflow ──────────── */
 body {
   min-height: max(884px, 100dvh);

@@ -8,7 +8,7 @@ export function Services() {
   const tr = t[lang].services;
 
   return (
-    <section>
+    <section id="uslugi">
 
       {/* Desktop: light background, full-width hover rows */}
       <div className="hidden md:block py-16 lg:py-20 px-6 md:px-10 lg:px-20">

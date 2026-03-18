@@ -1,68 +1,105 @@
 export type Lang = "pl" | "en";
 
+/* Nav routes — language-independent */
+export const NAV_ROUTES = ["/portfolio", "/#uslugi", "/podejscie", "/o-nas"] as const;
+
 export const t = {
   pl: {
     nav: {
-      links: ["Prace", "Usługi", "Proces", "O Nas"] as const,
+      links: ["Portfolio", "Usługi", "Podejście", "O nas"] as const,
       cta: "Porozmawiajmy",
     },
     hero: {
-      eyebrow: "Kreatywna Reżyseria & Projektowanie Cyfrowe",
+      eyebrow: "Kierunek Kreatywny & Digital Design",
       description:
-        "Tworzymy wysokoefektywne doświadczenia cyfrowe z naciskiem na unikalne rytmy layoutu i brutalistyczną estetykę.",
-      viewWork: "Zobacz Prace",
-      contact: "Kontakt",
+        "Projektujemy wydajne doświadczenia cyfrowe, łącząc unikalną dynamikę układu z surową, brutalistyczną estetyką.",
+      viewWork: "Zobacz portfolio",
+      contact: "Skontaktuj się z nami",
     },
     valueProps: [
       {
         icon: "bolt",
         title: "Odważna Wizja",
-        description: "Przekraczamy granice nowoczesnego UI poza standardowymi systemami siatek.",
+        description: "Przesuwamy granice nowoczesnego UI, wychodząc daleko poza standardowe systemy siatek.",
       },
       {
         icon: "account_circle",
-        title: "Podejście Użytkownika",
-        description: "Łączymy brutalistyczną estetykę z płynną użytecznością, która konwertuje i angażuje.",
+        title: "Zorientowanie na Użytkownika",
+        description: "Łączymy brutalistyczną estetykę z intuicyjną użytecznością, która angażuje i konwertuje.",
       },
       {
         icon: "palette",
         title: "Wysoki Kontrast",
-        description: "Wyraziste monochromatyczne palety z pomarańczowymi akcentami dla niezapomnianej tożsamości.",
+        description: "Wyraziste, monochromatyczne palety z charakterystycznymi pomarańczowymi akcentami, budujące zapadającą w pamięć tożsamość.",
       },
     ],
     services: {
       heading: "Usługi",
-      mobileLabel: "Ekspertyza",
-      mobileHeading: "Specjalistyczne Usługi",
+      mobileLabel: "Nasza Ekspertyza",
+      mobileHeading: "Specjalizacje",
       items: [
-        { num: "01", title: "Tożsamość Marki",      desc: "Logo, Wytyczne, Art Direction" },
-        { num: "02", title: "Projektowanie UI/UX",  desc: "Interfejsy, Prototypy, Aplikacje Mobilne" },
-        { num: "03", title: "Motion Design",         desc: "Animacje, Lottie, Micro-Interakcje" },
-        { num: "04", title: "Web Development",       desc: "Frontend, Wydajność, Wdrożenie" },
+        { num: "01", title: "Identyfikacja Wizualna", desc: "Logo, Brand Book, Art Direction" },
+        { num: "02", title: "Projektowanie UI/UX",    desc: "Interfejsy, Prototypy, Aplikacje Mobilne" },
+        { num: "03", title: "Motion Design",           desc: "Animacje, Lottie, Mikrointerakcje" },
+        { num: "04", title: "Web Development",         desc: "Frontend, Optymalizacja, Wdrożenia" },
       ],
     },
     works: {
-      heading: ["Wybrane", "Prace"],
-      seeAll: "Zobacz Wszystkie Projekty",
-      explore: "Przeglądaj Archiwum",
+      heading: ["Wybrane", "Realizacje"],
+      seeAll: "Zobacz wszystkie projekty",
+      explore: "Przeglądaj archiwum",
     },
-    socialProof: "Zbudowane w nowoczesnych technologiach",
+    socialProof: "Tworzymy w oparciu o nowoczesne technologie",
     cta: {
-      headline: "Masz",
+      headline: "Masz nowy",
       project: "Projekt?",
-      button: "Rozpocznij Rozmowę",
-      emailLabel: "Napisz do mnie na",
+      button: "Rozpocznijmy rozmowę",
+      emailLabel: "Napisz do nas na:",
     },
     footer: {
       description:
-        "Niezależne studio kreatywne skupione na wysokiej klasy rozwiązaniach cyfrowych i ekspresyjnych narracjach wizualnych. Z siedzibą w Helsinkach, działamy globalnie.",
+        "Niezależne studio kreatywne skupione na zaawansowanych rozwiązaniach cyfrowych i wyrazistej narracji wizualnej. Z siedzibą w Helsinkach, działające globalnie.",
       nav: "Nawigacja",
-      navLinks: ["Prace", "Usługi", "Studio", "Kontakt"],
+      navLinks: ["Portfolio", "Usługi", "Studio", "Kontakt"],
       office: "Biuro",
       socials: "Social Media",
-      copyright: "© 2024 VEYRO DESIGN STUDIO. WSZELKIE PRAWA ZASTRZEŻONE.",
+      copyright: "© 2024 VEYRO DESIGN STUDIO. WSZYSTKIE PRAWA ZASTRZEŻONE.",
       privacy: "Polityka Prywatności",
-      terms: "Warunki Usługi",
+      terms: "Regulamin",
+    },
+
+    /* ── Subpages ─────────────────────────────────────────── */
+    portfolio: {
+      eyebrow: "Nasze Realizacje",
+      heading: ["Wszystkie", "Projekty"],
+      intro: "Każdy projekt to unikalne wyzwanie. Oto wybrane prace, które definiują nasz styl i podejście do projektowania.",
+      tag: "Wszystkie kategorie",
+    },
+    approach: {
+      eyebrow: "Jak Pracujemy",
+      heading: ["Nasze", "Podejście"],
+      intro: "Skuteczny proces to fundament każdego udanego projektu. Każdy etap jest przemyślany i zorientowany na rezultat.",
+      steps: [
+        { num: "01", title: "Odkrycie",   desc: "Zagłębiamy się w Twoją markę, grupę docelową i cele biznesowe, by w pełni zrozumieć kontekst projektu i oczekiwania." },
+        { num: "02", title: "Strategia",  desc: "Na podstawie researchu wypracowujemy jasną strategię wizualną, architekturę informacji i roadmapę działań." },
+        { num: "03", title: "Projekt",    desc: "Tworzymy odważne, unikalne projekty, które wyróżniają się na tle konkurencji i budują silną tożsamość marki." },
+        { num: "04", title: "Realizacja", desc: "Wdrażamy projekt z najwyższą dbałością o szczegóły — czysty kod, płynne animacje, pełna responsywność." },
+        { num: "05", title: "Wdrożenie",  desc: "Dostarczamy gotowy produkt i wspieramy Cię na każdym etapie po launchu — optymalizacja, aktualizacje, wsparcie." },
+      ],
+    },
+    about: {
+      eyebrow: "Studio Kreatywne",
+      heading: ["O", "Nas"],
+      description: "Jesteśmy niezależnym studiem kreatywnym, które łączy brutalistyczną estetykę z nowoczesną funkcjonalnością. Tworzymy cyfrowe doświadczenia, które zapadają w pamięć i przynoszą realne rezultaty.",
+      missionTitle: "Nasza Misja",
+      mission: "Wierzymy, że doskonały design to nie tylko estetyka — to narzędzie, które buduje marki, angażuje odbiorców i napędza wzrost. Każdy piksel ma znaczenie.",
+      stats: [
+        { value: "5+",  label: "Lat doświadczenia" },
+        { value: "50+", label: "Ukończonych projektów" },
+        { value: "30+", label: "Zadowolonych klientów" },
+        { value: "3",   label: "Nagrody branżowe" },
+      ],
+      valuesTitle: "Nasze Wartości",
     },
   },
 
@@ -128,6 +165,40 @@ export const t = {
       copyright: "© 2024 VEYRO DESIGN STUDIO. ALL RIGHTS RESERVED.",
       privacy: "Privacy Policy",
       terms: "Terms of Service",
+    },
+
+    /* ── Subpages ─────────────────────────────────────────── */
+    portfolio: {
+      eyebrow: "Our Work",
+      heading: ["All", "Projects"],
+      intro: "Every project is a unique challenge. Here's a selection of work that defines our style and approach to design.",
+      tag: "All categories",
+    },
+    approach: {
+      eyebrow: "How We Work",
+      heading: ["Our", "Approach"],
+      intro: "An effective process is the foundation of every successful project. Each stage is deliberate and results-driven.",
+      steps: [
+        { num: "01", title: "Discovery",    desc: "We dive deep into your brand, target audience and business goals to fully understand the project context and expectations." },
+        { num: "02", title: "Strategy",     desc: "Based on research, we develop a clear visual strategy, information architecture and action roadmap." },
+        { num: "03", title: "Design",       desc: "We create bold, unique designs that stand out from the competition and build a strong brand identity." },
+        { num: "04", title: "Development",  desc: "We implement the project with the highest attention to detail — clean code, smooth animations, full responsiveness." },
+        { num: "05", title: "Launch",       desc: "We deliver the finished product and support you at every stage after launch — optimization, updates, ongoing support." },
+      ],
+    },
+    about: {
+      eyebrow: "Creative Studio",
+      heading: ["About", "Us"],
+      description: "We are an independent creative studio combining brutalist aesthetics with modern functionality. We create digital experiences that are remembered and deliver real results.",
+      missionTitle: "Our Mission",
+      mission: "We believe great design is not just aesthetics — it's a tool that builds brands, engages audiences and drives growth. Every pixel matters.",
+      stats: [
+        { value: "5+",  label: "Years of experience" },
+        { value: "50+", label: "Completed projects" },
+        { value: "30+", label: "Happy clients" },
+        { value: "3",   label: "Industry awards" },
+      ],
+      valuesTitle: "Our Values",
     },
   },
 } as const;
