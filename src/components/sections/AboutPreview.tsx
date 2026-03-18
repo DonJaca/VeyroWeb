@@ -31,10 +31,12 @@ export function AboutPreview() {
 
         {/* Stats row */}
         <div className="grid grid-cols-2 md:grid-cols-4 border-t border-white/10">
-          {tr.stats.map(({ value, label }) => (
+          {tr.stats.map(({ value, label }, i) => (
             <div
               key={label}
-              className="border-r border-white/10 last:border-r-0 px-4 py-8 md:py-10 flex flex-col gap-2"
+              className={`px-4 py-8 md:py-10 flex flex-col gap-2 border-r border-white/10 ${
+                i === 1 ? "border-r-0 md:border-r" : ""
+              } ${i === 3 ? "border-r-0" : ""}`}
             >
               <span className="text-4xl md:text-6xl font-black text-primary tracking-tighter leading-none">
                 {value}
