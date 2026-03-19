@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "build:pages": "next build",
+    "build": "next build && node scripts/inline-css.mjs",
+    "build:pages": "next build && node scripts/inline-css.mjs",
     "deploy:pages": "wrangler pages deploy out --project-name veyroweb",
     "start": "next start",
     "lint": "next lint",
