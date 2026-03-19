@@ -67,6 +67,8 @@ export function Works() {
                 <img
                   src={img}
                   alt={alt}
+                  width={800}
+                  height={1000}
                   className="h-full w-full scale-110 object-cover grayscale transition-all duration-700 hover:grayscale-0 group-hover:scale-100"
                   loading="lazy"
                   decoding="async"
@@ -74,7 +76,7 @@ export function Works() {
               </div>
               <div>
                 <p className="mb-2 text-xs font-bold uppercase tracking-widest text-primary">{tag}</p>
-                <h4 className="text-2xl font-black uppercase italic lg:text-3xl">{title}</h4>
+                <h3 className="text-2xl font-black uppercase italic lg:text-3xl">{title}</h3>
               </div>
             </article>
           ))}
@@ -88,6 +90,8 @@ export function Works() {
                 <img
                   src={img}
                   alt={alt}
+                  width={480}
+                  height={480}
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                   loading="lazy"
                   decoding="async"
@@ -96,9 +100,9 @@ export function Works() {
               <div className="flex items-start justify-between gap-4">
                 <div className="min-w-0">
                   <p className="mb-2 text-xs font-bold uppercase tracking-widest text-primary">{tag}</p>
-                  <h4 className="text-xl font-bold decoration-primary underline-offset-8 group-hover:underline">
+                  <h3 className="text-xl font-bold decoration-primary underline-offset-8 group-hover:underline">
                     {title}
-                  </h4>
+                  </h3>
                 </div>
                 <button className="flex-shrink-0 rounded-full bg-primary/10 p-3 dark:bg-primary/20" aria-label={`Otwórz ${title}`}>
                   <span className="material-symbols-outlined text-primary" aria-hidden="true">north_east</span>

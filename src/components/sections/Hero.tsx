@@ -30,7 +30,7 @@ export function Hero() {
 
           <div className="grid gap-8 md:grid-cols-[minmax(0,24rem)_minmax(0,1fr)] md:items-end lg:gap-12">
             <div className="space-y-6 md:max-w-sm lg:max-w-md">
-              <p className="text-base font-medium leading-relaxed opacity-80 sm:text-lg md:text-xl">
+              <p className="text-base font-medium leading-relaxed opacity-90 sm:text-lg md:text-xl">
                 {tr.description}
               </p>
 
@@ -45,28 +45,36 @@ export function Hero() {
             </div>
 
             <div className="group relative min-w-0">
+              {/* Desktop hero */}
               <div className="relative hidden aspect-video overflow-hidden bg-slate-200 dark:bg-slate-800 md:block">
                 <div className="absolute inset-0 z-10 bg-primary/20 transition-colors duration-500 group-hover:bg-transparent" />
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={HERO_IMG_DESKTOP}
-                  alt="Abstract 3D digital sculpture"
-                  className="h-full w-full object-cover"
-                  fetchPriority="high"
-                  loading="eager"
-                />
+                <picture>
+                  <source media="(min-width: 768px)" srcSet={HERO_IMG_DESKTOP} />
+                  <img
+                    src={HERO_IMG_DESKTOP}
+                    alt="Abstract 3D digital sculpture"
+                    className="h-full w-full object-cover"
+                    width={960}
+                    height={540}
+                    fetchPriority="high"
+                  />
+                </picture>
               </div>
 
+              {/* Mobile hero */}
               <div className="relative pb-8 pr-6 md:hidden">
                 <div className="aspect-[4/5] overflow-hidden bg-slate-200 shadow-2xl dark:bg-slate-800">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={HERO_IMG_MOBILE}
-                    alt="Abstract 3D architectural render"
-                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    fetchPriority="high"
-                    loading="eager"
-                  />
+                  <picture>
+                    <source media="(max-width: 767px)" srcSet={HERO_IMG_MOBILE} />
+                    <img
+                      src={HERO_IMG_MOBILE}
+                      alt="Abstract 3D architectural render"
+                      className="h-full w-full object-cover"
+                      width={480}
+                      height={600}
+                      fetchPriority="high"
+                    />
+                  </picture>
                 </div>
                 <div className="absolute bottom-0 right-0 bg-primary p-5 shadow-xl">
                   <span className="material-symbols-outlined text-3xl text-background-dark" aria-hidden="true">

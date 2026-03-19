@@ -19,8 +19,8 @@ export function ValueProposition() {
             <span className="material-symbols-outlined text-3xl text-primary md:text-4xl" aria-hidden="true">
               {icon}
             </span>
-            <h3 className="text-lg font-black uppercase italic leading-tight md:text-xl">{title}</h3>
-            <p className="text-sm opacity-70 md:text-base">{description}</p>
+            <h2 className="text-lg font-black uppercase italic leading-tight md:text-xl">{title}</h2>
+            <p className="text-sm text-slate-600 dark:text-slate-400 md:text-base">{description}</p>
           </div>
         ))}
       </Container>

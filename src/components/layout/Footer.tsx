@@ -19,7 +19,7 @@ export function Footer() {
               <div className="size-6 bg-primary" />
               <span className="text-2xl font-black italic tracking-tighter">VEYRO</span>
             </div>
-            <p className="max-w-sm font-medium opacity-50">{tr.description}</p>
+            <p className="max-w-sm font-medium text-white/70">{tr.description}</p>
             <div className="flex gap-4">
               {[
                 { icon: "home", label: "Home", href: "/" },
@@ -40,7 +40,7 @@ export function Footer() {
 
           <div className="flex flex-col gap-4">
             <h3 className="text-sm font-black uppercase tracking-widest text-primary">{tr.nav}</h3>
-            <ul className="flex flex-col gap-3 opacity-60">
+            <ul className="flex flex-col gap-3 text-white/70">
               {tr.navLinks.map((item, i) => (
                 <li key={item}>
                   <Link href={FOOTER_NAV_ROUTES[i]} className="transition-colors hover:text-primary">
@@ -53,7 +53,7 @@ export function Footer() {
 
           <div className="flex flex-col gap-4">
             <h3 className="text-sm font-black uppercase tracking-widest text-primary">{tr.office}</h3>
-            <address className="flex flex-col gap-3 not-italic opacity-60">
+            <address className="flex flex-col gap-3 not-italic text-white/70">
               <p>Nowy Sącz<br />Małopolska, Polska</p>
               <p>{siteConfig.email}</p>
             </address>
@@ -66,12 +66,12 @@ export function Footer() {
               <div className="size-6 bg-primary" />
               <span className="text-2xl font-black italic tracking-tighter">VEYRO</span>
             </div>
-            <p className="text-sm font-medium opacity-50">{tr.description}</p>
+            <p className="text-sm font-medium text-white/70">{tr.description}</p>
           </div>
           <div className="grid grid-cols-2 gap-8">
             <div className="flex flex-col gap-4">
               <h3 className="text-sm font-black uppercase tracking-widest text-primary">{tr.nav}</h3>
-              <ul className="flex flex-col gap-3 text-sm opacity-60">
+              <ul className="flex flex-col gap-3 text-sm text-white/70">
                 {tr.navLinks.map((item, i) => (
                   <li key={item}>
                     <Link href={FOOTER_NAV_ROUTES[i]} className="transition-colors hover:text-primary">
@@ -83,7 +83,7 @@ export function Footer() {
             </div>
             <div className="flex flex-col gap-4">
               <h3 className="text-sm font-black uppercase tracking-widest text-primary">{tr.office}</h3>
-              <address className="flex flex-col gap-2 text-sm not-italic opacity-60">
+              <address className="flex flex-col gap-2 text-sm not-italic text-white/70">
                 <p>Nowy Sącz</p>
                 <p>{siteConfig.email}</p>
               </address>
@@ -115,11 +115,11 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-xs font-bold uppercase tracking-widest opacity-30 md:mt-16 sm:flex-row">
+        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-xs font-bold uppercase tracking-widest text-white/50 md:mt-16 sm:flex-row">
           <p>{tr.copyright}</p>
           <div className="flex gap-6 md:gap-8">
-            <Link href="/polityka-prywatnosci" className="transition-opacity hover:opacity-60">{tr.privacy}</Link>
-            <Link href="/regulamin" className="transition-opacity hover:opacity-60">{tr.terms}</Link>
+            <Link href="/polityka-prywatnosci" className="transition-opacity hover:text-white/70">{tr.privacy}</Link>
+            <Link href="/regulamin" className="transition-opacity hover:text-white/70">{tr.terms}</Link>
           </div>
         </div>
       </Container>

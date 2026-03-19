@@ -24,9 +24,16 @@
   --radius-3xl: 0rem;
 }
 
-/* ── Smooth scroll ──────────────────────────────────────────── */
-html {
-  scroll-behavior: smooth;
+/* ── Smooth scroll (only desktop, respects reduced-motion) ── */
+@media (min-width: 768px) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 /* ── Body minimum height + no horizontal overflow ──────────── */
