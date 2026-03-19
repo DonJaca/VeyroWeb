@@ -70,8 +70,12 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
           rel="stylesheet"
           media="print"
-          // @ts-expect-error -- onLoad sets media to all after async load
-          onLoad="this.media='all'"
+          id="material-symbols-css"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `document.getElementById('material-symbols-css').media='all'`,
+          }}
         />
         <noscript>
           <link
