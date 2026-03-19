@@ -52,16 +52,20 @@ export function Hero() {
                   src={HERO_IMG_DESKTOP}
                   alt="Abstract 3D digital sculpture"
                   className="h-full w-full object-cover"
+                  fetchPriority="high"
+                  loading="eager"
                 />
               </div>
 
               <div className="relative pb-8 pr-6 md:hidden">
                 <div className="aspect-[4/5] overflow-hidden bg-slate-200 shadow-2xl dark:bg-slate-800">
-                  <div
-                    className="h-full w-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                    style={{ backgroundImage: `url('${HERO_IMG_MOBILE}')` }}
-                    role="img"
-                    aria-label="Abstract 3D architectural render"
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={HERO_IMG_MOBILE}
+                    alt="Abstract 3D architectural render"
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    fetchPriority="high"
+                    loading="eager"
                   />
                 </div>
                 <div className="absolute bottom-0 right-0 bg-primary p-5 shadow-xl">
