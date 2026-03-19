@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/layout/Container";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -62,16 +63,14 @@ export function Works() {
               key={title}
               className={`group flex cursor-pointer flex-col gap-6${offset ? " md:mt-20 lg:mt-32" : ""}`}
             >
-              <div className="aspect-[4/5] overflow-hidden bg-slate-100 dark:bg-slate-900">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+              <div className="relative aspect-[4/5] overflow-hidden bg-slate-100 dark:bg-slate-900">
+                <Image
                   src={img}
                   alt={alt}
-                  width={800}
-                  height={1000}
-                  className="h-full w-full scale-110 object-cover grayscale transition-all duration-700 hover:grayscale-0 group-hover:scale-100"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="scale-110 object-cover grayscale transition-all duration-700 hover:grayscale-0 group-hover:scale-100"
                   loading="lazy"
-                  decoding="async"
                 />
               </div>
               <div>
@@ -85,16 +84,14 @@ export function Works() {
         <div className="space-y-12 md:hidden">
           {MOBILE_PROJECTS.map(({ img, alt, tag, title }) => (
             <article key={title} className="group">
-              <div className="mb-5 aspect-square overflow-hidden bg-slate-100 dark:bg-slate-900">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+              <div className="relative mb-5 aspect-square overflow-hidden bg-slate-100 dark:bg-slate-900">
+                <Image
                   src={img}
                   alt={alt}
-                  width={480}
-                  height={480}
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  fill
+                  sizes="100vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
                   loading="lazy"
-                  decoding="async"
                 />
               </div>
               <div className="flex items-start justify-between gap-4">

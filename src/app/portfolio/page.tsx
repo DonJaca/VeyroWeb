@@ -61,7 +61,6 @@ export default function Portfolio() {
                       sizes="(max-width: 768px) 100vw, 50vw"
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                       loading="lazy"
-                      unoptimized
                     />
                     <div className="absolute inset-0 bg-black/0 transition-all duration-300 group-hover:bg-black/40" />
                     <div className="absolute bottom-0 left-0 right-0 translate-y-2 p-6 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
