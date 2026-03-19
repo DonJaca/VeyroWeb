@@ -17,7 +17,7 @@ export function ApproachPreview() {
             <span className="mb-4 block text-xs font-bold uppercase tracking-[0.2em] text-primary">
               {tr.eyebrow}
             </span>
-            <h2 className="text-4xl font-black uppercase leading-none tracking-tighter md:text-6xl lg:text-7xl">
+            <h2 className="text-3xl font-black uppercase leading-none tracking-tighter md:text-6xl lg:text-7xl">
               {tr.heading}
             </h2>
           </div>

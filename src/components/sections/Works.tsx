@@ -46,7 +46,7 @@ export function Works() {
     <section id="portfolio" className="bg-background-light py-16 dark:bg-background-dark lg:py-20">
       <Container>
         <div className="mb-10 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end md:mb-16">
-          <h2 className="text-4xl font-black uppercase leading-none tracking-tighter md:text-5xl lg:text-6xl">
+          <h2 className="text-3xl font-black uppercase leading-none tracking-tighter md:text-5xl lg:text-6xl">
             {tr.heading[0]}<br />{tr.heading[1]}
           </h2>
           <Link href="/portfolio" className="group flex flex-shrink-0 items-center gap-2 text-sm font-bold uppercase tracking-widest transition-colors hover:text-primary">

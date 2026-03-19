@@ -12,7 +12,7 @@ export function CTA() {
   return (
     <section className="py-16 text-center md:py-24 lg:py-32">
       <Container>
-        <h2 className="mb-6 text-4xl font-black uppercase tracking-tighter sm:text-5xl md:text-6xl lg:text-8xl">
+        <h2 className="mb-6 text-3xl font-black uppercase tracking-tighter sm:text-5xl md:text-6xl lg:text-8xl">
           {tr.headline}
         </h2>
 
