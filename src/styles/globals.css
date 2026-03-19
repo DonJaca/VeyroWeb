@@ -45,13 +45,6 @@ body {
   font-variation-settings: 'FILL' 1;
 }
 
-/* ── Custom 12-column grid ──────────────────────────────────── */
-.custom-grid {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 1.5rem;
-}
-
 /* ── Mobile: Syne font for headings ─────────────────────────── */
 @media (max-width: 767px) {
   h1, h2, h3 {
