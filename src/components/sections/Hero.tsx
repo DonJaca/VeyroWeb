@@ -4,11 +4,8 @@ import { Container } from "@/components/layout/Container";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { t } from "@/lib/translations";
 
-const HERO_IMG_DESKTOP =
-  "https://lh3.googleusercontent.com/aida-public/AB6AXuBswblmMmSvckhQ6bcl7-wkOZ7uBITc1k3rxKSWxm15AaQZFES7sUG6j05OmPcldaukcYjqFIohzcpA_ImuWWMePcS5X_t1zZIBdreB1WG-oOUazZXAGpM1VhT_WXX6llsjXfyUuX4XJ_RPLSl8aJ9tkhCd8b3PlZRRgm_oFloN9ThXBJiRxdfhEU9qsdv3LKzzYFW1opPxBo45ocBRME5b7Crce-QEo1Qyxd7nmrA8_MlAdw40UQ_tjPwqHZIfm7loLg59oUJOscE=w960";
-
-const HERO_IMG_MOBILE =
-  "https://lh3.googleusercontent.com/aida-public/AB6AXuAFD2qu-EGNxAyjdb0j_txxs592hQmp8B5tmknHhKyiWiXuwQ_Gp9CtUq-X3K6yXKbX0VeM27KG53TWNKlrZ0Z2OO961rFmmzwUqSu_pQZHr_G4UI3dNw0ciTetArEEBVkt6-qKFW5ndqH1f1l4uAkfoOFm5GAlG99Z8_gtItsYROpovJuQ6UInzNAYwUulFutIxIvdno9cHIfCfJdxeXVitk8dda0tNbdjBnDXtuFwIZS7ydVDt9fW9Q5zylU6PPRh79UFbkRvS24=w480";
+const HERO_IMG_DESKTOP = "/images/hero-desktop.webp";
+const HERO_IMG_MOBILE = "/images/hero-mobile.webp";
 
 export function Hero() {
   const { lang } = useLanguage();
