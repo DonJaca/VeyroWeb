@@ -6,7 +6,7 @@ export const NAV_ROUTES = ["/#uslugi", "/#portfolio", "/#podejscie", "/#o-nas"] 
 export const BACK_LABEL = { pl: "Wróć do sekcji", en: "Back to section" } as const;
 
 /* Footer nav: Usługi, Portfolio, Studio, Kontakt */
-export const FOOTER_NAV_ROUTES = ["/#uslugi", "/#portfolio", "/o-nas", "mailto:hello@veyro.design"] as const;
+export const FOOTER_NAV_ROUTES = ["/#uslugi", "/#portfolio", "/o-nas", "/kontakt"] as const;
 
 export const t = {
   pl: {

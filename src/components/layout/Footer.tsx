@@ -1,7 +1,9 @@
 "use client";
 
+import Link from "next/link";
 import { Container } from "@/components/layout/Container";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { siteConfig } from "@/lib/site";
 import { t, FOOTER_NAV_ROUTES } from "@/lib/translations";
 
 export function Footer() {
@@ -20,18 +22,18 @@ export function Footer() {
             <p className="max-w-sm font-medium opacity-50">{tr.description}</p>
             <div className="flex gap-4">
               {[
-                { icon: "public", label: "Website" },
-                { icon: "share", label: "Share" },
-                { icon: "alternate_email", label: "Email" },
-              ].map(({ icon, label }) => (
-                <a
+                { icon: "home", label: "Home", href: "/" },
+                { icon: "work", label: "Portfolio", href: "/portfolio" },
+                { icon: "alternate_email", label: "Email", href: `mailto:${siteConfig.email}` },
+              ].map(({ icon, label, href }) => (
+                <Link
                   key={icon}
-                  href="#"
+                  href={href}
                   aria-label={label}
                   className="flex size-10 items-center justify-center border border-white/20 transition-all hover:border-primary hover:bg-primary"
                 >
                   <span className="material-symbols-outlined text-sm" aria-hidden="true">{icon}</span>
-                </a>
+                </Link>
               ))}
             </div>
           </div>
@@ -41,7 +43,9 @@ export function Footer() {
             <ul className="flex flex-col gap-3 opacity-60">
               {tr.navLinks.map((item, i) => (
                 <li key={item}>
-                  <a href={FOOTER_NAV_ROUTES[i]} className="transition-colors hover:text-primary">{item}</a>
+                  <Link href={FOOTER_NAV_ROUTES[i]} className="transition-colors hover:text-primary">
+                    {item}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -51,7 +55,7 @@ export function Footer() {
             <h3 className="text-sm font-black uppercase tracking-widest text-primary">{tr.office}</h3>
             <address className="flex flex-col gap-3 not-italic opacity-60">
               <p>Nowy Sącz<br />Małopolska, Polska</p>
-              <p>+48 000 000 000</p>
+              <p>{siteConfig.email}</p>
             </address>
           </div>
         </div>
@@ -70,7 +74,9 @@ export function Footer() {
               <ul className="flex flex-col gap-3 text-sm opacity-60">
                 {tr.navLinks.map((item, i) => (
                   <li key={item}>
-                    <a href={FOOTER_NAV_ROUTES[i]} className="transition-colors hover:text-primary">{item}</a>
+                    <Link href={FOOTER_NAV_ROUTES[i]} className="transition-colors hover:text-primary">
+                      {item}
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -79,7 +85,7 @@ export function Footer() {
               <h3 className="text-sm font-black uppercase tracking-widest text-primary">{tr.office}</h3>
               <address className="flex flex-col gap-2 text-sm not-italic opacity-60">
                 <p>Nowy Sącz</p>
-                <p>+48 000 000 000</p>
+                <p>{siteConfig.email}</p>
               </address>
             </div>
           </div>
@@ -92,11 +98,11 @@ export function Footer() {
           </div>
           <div className="grid grid-cols-2 gap-8 text-center">
             <div className="space-y-4">
-              <p className="text-xs font-bold uppercase tracking-widest text-slate-400">{tr.socials}</p>
+              <p className="text-xs font-bold uppercase tracking-widest text-slate-400">{tr.nav}</p>
               <div className="flex flex-col gap-2 font-bold">
-                {["Instagram", "Dribbble", "Behance"].map((social) => (
-                  <a key={social} href="#" className="transition-colors hover:text-primary">{social}</a>
-                ))}
+                <Link href="/portfolio" className="transition-colors hover:text-primary">Portfolio</Link>
+                <Link href="/kontakt" className="transition-colors hover:text-primary">Kontakt</Link>
+                <a href={`mailto:${siteConfig.email}`} className="transition-colors hover:text-primary">E-mail</a>
               </div>
             </div>
             <div className="space-y-4">
@@ -112,8 +118,8 @@ export function Footer() {
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-xs font-bold uppercase tracking-widest opacity-30 md:mt-16 sm:flex-row">
           <p>{tr.copyright}</p>
           <div className="flex gap-6 md:gap-8">
-            <a href="/polityka-prywatnosci" className="transition-opacity hover:opacity-60">{tr.privacy}</a>
-            <a href="/regulamin" className="transition-opacity hover:opacity-60">{tr.terms}</a>
+            <Link href="/polityka-prywatnosci" className="transition-opacity hover:opacity-60">{tr.privacy}</Link>
+            <Link href="/regulamin" className="transition-opacity hover:opacity-60">{tr.terms}</Link>
           </div>
         </div>
       </Container>
