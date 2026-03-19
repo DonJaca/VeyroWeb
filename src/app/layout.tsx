@@ -8,14 +8,14 @@ const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
   weight: ["400", "700", "900"],
-  display: "swap",
+  display: "optional",
 });
 
 const syne = Syne({
   variable: "--font-syne",
   subsets: ["latin"],
   weight: ["400", "700", "800"],
-  display: "swap",
+  display: "optional",
 });
 
 export const metadata: Metadata = {

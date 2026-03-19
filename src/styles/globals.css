@@ -47,6 +47,15 @@ body {
   color: transparent;
 }
 
+/* ── Material Symbols: fixed size to prevent CLS ────────────── */
+.material-symbols-outlined {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+}
+
 /* ── Material Symbols: FILL axis ────────────────────────────── */
 .fill-1 {
   font-variation-settings: 'FILL' 1;
